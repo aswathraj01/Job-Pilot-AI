@@ -1,0 +1,57 @@
+# ─────────────────────────────────────────────
+#  Job Autopilot Configuration
+# ─────────────────────────────────────────────
+
+anthropic_api_key: "sk-ant-YOUR_KEY_HERE"
+
+# Path to your plain-text resume
+resume_file: "resume.txt"
+
+# ── Job Search ────────────────────────────────
+job_search:
+  keywords:
+    - "Software Engineer"
+    - "Backend Developer"
+    - "Python Developer"
+  location: "Remote"          # city, "Remote", or ""
+  experience_level: "mid"     # junior | mid | senior
+  job_type: "fulltime"        # fulltime | parttime | contract | internship
+
+# ── Quality Filter ────────────────────────────
+filters:
+  min_match_score: 65         # 0-100, skip jobs below this
+  exclude_keywords:
+    - "10+ years"
+    - "Principal Engineer"
+    - "Staff Engineer"
+  max_applications_per_cycle: 5
+
+# ── Scheduler ─────────────────────────────────
+scheduler:
+  interval_minutes: 8
+
+# ── LinkedIn ──────────────────────────────────
+linkedin:
+  enabled: true
+  email: "your@email.com"
+  password: "yourpassword"
+  easy_apply_only: true
+
+# ── Indeed ────────────────────────────────────
+indeed:
+  enabled: true
+  email: "your@email.com"
+  password: "yourpassword"
+
+# ── RemoteOK (no login needed) ────────────────
+remoteok:
+  enabled: true
+
+# ── Notifications (optional SMTP) ────────────
+notifications:
+  enabled: false
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  smtp_user: "your@gmail.com"
+  smtp_password: "app-password"
+  notify_to: "your@email.com"
