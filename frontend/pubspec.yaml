@@ -1,0 +1,75 @@
+name: job_pilot_ai
+description: "AI-powered job application tracker — Flutter Web"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.19.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # State management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # HTTP client
+  dio: ^5.4.3
+  retrofit: ^4.1.0
+
+  # Charts
+  fl_chart: ^0.67.0
+
+  # Animations
+  flutter_animate: ^4.5.0
+
+  # Storage
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.0.0
+
+  # UI utilities
+  google_fonts: ^6.2.1
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  timeago: ^3.6.1
+  intl: ^0.19.0
+  url_launcher: ^6.2.6
+  file_picker: ^8.0.0+1
+  percent_indicator: ^4.2.3
+
+  # Icons
+  lucide_icons: ^0.0.2
+
+  # JSON
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.0
+  retrofit_generator: ^8.1.0
+  json_serializable: ^6.8.0
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+  assets:
+    - assets/images/
+    - assets/lottie/

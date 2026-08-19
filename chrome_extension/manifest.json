@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Job-Pilot AI",
+  "version": "1.0.0",
+  "description": "Save any job posting to Job-Pilot AI with one click. Works on LinkedIn, Indeed, Greenhouse, Lever, Workday, and more.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "Save to Job-Pilot AI"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://indeed.com/*",
+    "https://www.indeed.com/*",
+    "https://*.greenhouse.io/*",
+    "https://*.lever.co/*",
+    "https://*.workday.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "https://*.ashbyhq.com/*",
+    "https://wellfound.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/jobs/*",
+        "https://indeed.com/viewjob*",
+        "https://www.indeed.com/viewjob*",
+        "https://*.greenhouse.io/jobs/*",
+        "https://*.lever.co/*",
+        "https://*.workday.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "https://*.ashbyhq.com/*",
+        "https://wellfound.com/jobs/*"
+      ],
+      "js": ["content/content_script.js"],
+      "css": ["content/content_script.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

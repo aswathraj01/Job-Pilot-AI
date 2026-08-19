@@ -1,0 +1,46 @@
+/* Job-Pilot AI floating button styles */
+#jobpilot-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.5);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
+  user-select: none;
+}
+
+#jobpilot-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.6);
+}
+
+#jobpilot-btn:active { transform: translateY(0); }
+
+#jobpilot-btn .jp-icon { font-size: 16px; }
+#jobpilot-btn .jp-label { white-space: nowrap; }
+
+#jobpilot-btn.jp-loading {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+#jobpilot-btn.jp-success {
+  background: linear-gradient(135deg, #10B981, #059669);
+  box-shadow: 0 4px 24px rgba(16, 185, 129, 0.5);
+}
+
+#jobpilot-btn.jp-error {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  box-shadow: 0 4px 24px rgba(239, 68, 68, 0.5);
+}
