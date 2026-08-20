@@ -96,7 +96,7 @@ async def test_delete_job(client: AsyncClient, auth_headers: dict) -> None:
         )
     job_id = create_resp.json()["id"]
     resp = await client.delete(f"/api/v1/jobs/{job_id}", headers=auth_headers)
-    assert resp.status_code == 204
+    assert resp.status_code == 200
 
 
 @pytest.mark.asyncio
