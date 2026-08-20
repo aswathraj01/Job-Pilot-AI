@@ -65,16 +65,23 @@ class Settings(BaseSettings):
     # ── JWT ───────────────────────────────────────────────────────────────
     JWT_PRIVATE_KEY_PATH: str = "./keys/private.pem"
     JWT_PUBLIC_KEY_PATH: str = "./keys/public.pem"
+    JWT_PRIVATE_KEY_RAW: str = ""
+    JWT_PUBLIC_KEY_RAW: str = ""
     JWT_ALGORITHM: str = "RS256"
     JWT_ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     JWT_REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
     @property
     def jwt_private_key(self) -> str:
+        if self.JWT_PRIVATE_KEY_RAW:
+            # Replace literal \n with actual newlines in case it's passed as a single string
+            return self.JWT_PRIVATE_KEY_RAW.replace("\\n", "\n")
         return Path(self.JWT_PRIVATE_KEY_PATH).read_text()
 
     @property
     def jwt_public_key(self) -> str:
+        if self.JWT_PUBLIC_KEY_RAW:
+            return self.JWT_PUBLIC_KEY_RAW.replace("\\n", "\n")
         return Path(self.JWT_PUBLIC_KEY_PATH).read_text()
 
     # ── LLM ──────────────────────────────────────────────────────────────
