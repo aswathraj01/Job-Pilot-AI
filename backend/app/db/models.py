@@ -31,10 +31,14 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
 )
-from sqlalchemy.dialects.postgresql import JSONB, UUID
+from sqlalchemy.dialects.postgresql import JSONB as PG_JSONB, UUID
+from sqlalchemy.types import JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.session import Base
+
+# Cross-dialect JSONB: uses native JSON in SQLite and JSONB in PostgreSQL
+JSONB = JSON().with_variant(PG_JSONB, "postgresql")
 
 
 # ─── Enumerations ─────────────────────────────────────────────────────────────
